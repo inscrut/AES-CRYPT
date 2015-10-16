@@ -29,63 +29,72 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.texta = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.pass1 = new System.Windows.Forms.TextBox();
+            this.anstext = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cb1hash = new System.Windows.Forms.ComboBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.cb2len = new System.Windows.Forms.ComboBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.salt0 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // texta
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(12, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 0;
+            this.texta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.texta.Location = new System.Drawing.Point(12, 25);
+            this.texta.Name = "texta";
+            this.texta.Size = new System.Drawing.Size(280, 20);
+            this.texta.TabIndex = 0;
+            this.texta.Text = "Hello, World!";
             // 
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(218, 25);
+            this.button1.Location = new System.Drawing.Point(192, 104);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 46);
-            this.button1.TabIndex = 1;
+            this.button1.Size = new System.Drawing.Size(100, 45);
+            this.button1.TabIndex = 7;
             this.button1.Text = "Encrypt";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // pass1
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox2.Location = new System.Drawing.Point(12, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(125, 20);
-            this.textBox2.TabIndex = 2;
+            this.pass1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pass1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pass1.Location = new System.Drawing.Point(12, 78);
+            this.pass1.Name = "pass1";
+            this.pass1.PasswordChar = '*';
+            this.pass1.Size = new System.Drawing.Size(120, 20);
+            this.pass1.TabIndex = 3;
+            this.pass1.Text = "1488";
             // 
-            // textBox3
+            // anstext
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.textBox3.Location = new System.Drawing.Point(13, 77);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox3.Size = new System.Drawing.Size(281, 100);
-            this.textBox3.TabIndex = 3;
+            this.anstext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.anstext.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.anstext.Location = new System.Drawing.Point(12, 158);
+            this.anstext.Multiline = true;
+            this.anstext.Name = "anstext";
+            this.anstext.ReadOnly = true;
+            this.anstext.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.anstext.Size = new System.Drawing.Size(280, 131);
+            this.anstext.TabIndex = 8;
+            this.anstext.WordWrap = false;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Help;
-            this.checkBox1.Location = new System.Drawing.Point(143, 52);
+            this.checkBox1.Location = new System.Drawing.Point(223, 79);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(69, 17);
-            this.checkBox1.TabIndex = 4;
+            this.checkBox1.TabIndex = 5;
             this.checkBox1.Text = "Decrypt?";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -99,18 +108,84 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Введите текст и пароль для шифрования";
             // 
+            // cb1hash
+            // 
+            this.cb1hash.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb1hash.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb1hash.FormattingEnabled = true;
+            this.cb1hash.Items.AddRange(new object[] {
+            "SHA1",
+            "MD5"});
+            this.cb1hash.Location = new System.Drawing.Point(138, 52);
+            this.cb1hash.Name = "cb1hash";
+            this.cb1hash.Size = new System.Drawing.Size(73, 21);
+            this.cb1hash.TabIndex = 1;
+            this.cb1hash.SelectedIndexChanged += new System.EventHandler(this.cb1hash_SelectedIndexChanged);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(12, 104);
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(174, 45);
+            this.trackBar1.TabIndex = 6;
+            this.trackBar1.Value = 2;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // cb2len
+            // 
+            this.cb2len.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb2len.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cb2len.FormattingEnabled = true;
+            this.cb2len.Items.AddRange(new object[] {
+            "128",
+            "192",
+            "256"});
+            this.cb2len.Location = new System.Drawing.Point(217, 52);
+            this.cb2len.Name = "cb2len";
+            this.cb2len.Size = new System.Drawing.Size(75, 21);
+            this.cb2len.TabIndex = 2;
+            this.cb2len.SelectedIndexChanged += new System.EventHandler(this.cb2len_SelectedIndexChanged);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.AsciiOnly = true;
+            this.maskedTextBox1.HidePromptOnLeave = true;
+            this.maskedTextBox1.Location = new System.Drawing.Point(12, 52);
+            this.maskedTextBox1.Mask = "AAAAAAAAAAAAAAAA";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(120, 20);
+            this.maskedTextBox1.TabIndex = 9;
+            this.maskedTextBox1.TabStop = false;
+            this.maskedTextBox1.Text = "SCHOOL2283221488";
+            // 
+            // salt0
+            // 
+            this.salt0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.salt0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.salt0.Location = new System.Drawing.Point(138, 78);
+            this.salt0.Name = "salt0";
+            this.salt0.Size = new System.Drawing.Size(73, 20);
+            this.salt0.TabIndex = 4;
+            this.salt0.Text = "salted";
+            // 
             // Form1
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(306, 189);
+            this.ClientSize = new System.Drawing.Size(304, 301);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.cb2len);
+            this.Controls.Add(this.cb1hash);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.anstext);
+            this.Controls.Add(this.salt0);
+            this.Controls.Add(this.pass1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.texta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -118,6 +193,7 @@
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.Text = "AES";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,12 +201,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox texta;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox pass1;
+        private System.Windows.Forms.TextBox anstext;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cb1hash;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.ComboBox cb2len;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox salt0;
     }
 }
 

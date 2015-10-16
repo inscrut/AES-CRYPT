@@ -10,31 +10,45 @@ namespace AES_CRYPT
     {
         bool crpt = true;
         string ans = "";
+        int pinter = 2;
+        string hs = "SHA1";
+        int siz = 256;
+        string salted = "";
+        string vec = "";
 
         public Form1()
         {
             InitializeComponent();
+            cb1hash.SelectedIndex = 0;
+            cb2len.SelectedIndex = 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.TextLength != 0)
+            if (texta.TextLength != 0)
             {
-                if (textBox2.TextLength != 0)
+                if (pass1.TextLength != 0)
                 {
-                    if (crpt)
+                    if (maskedTextBox1.TextLength == 16)
                     {
-                        label1.Text = "Шифруем...";
-                        ans = aes.Encrypt(textBox1.Text, textBox2.Text, "VK", "SHA1", 2, "SCHOOL2283221488", 256);
-                        textBox3.Text = ans;
+                        if (crpt)
+                        {
+                            label1.Text = "Шифруем...";
+                            ans = aes.Encrypt(texta.Text, pass1.Text, salt0.Text, hs, pinter, maskedTextBox1.Text, siz);
+                            anstext.Text = ans;
+                            label1.Text = "Готово!";
+                        }
+                        else
+                        {
+                            label1.Text = "Дешифруем...";
+                            salted = Convert.ToString(salt0.Text);
+                            vec = Convert.ToString(maskedTextBox1.Text);
+                            ans = aes.Decrypt(texta.Text, pass1.Text, salted, hs, pinter, vec, siz);
+                            anstext.Text = ans;
+                            label1.Text = "Готово!";
+                        }
                     }
-                    else
-                    {
-                        label1.Text = "Дешифруем...";
-                        ans = aes.Decrypt(textBox1.Text, textBox2.Text, "VK", "SHA1", 2, "SCHOOL2283221488", 256);
-                        textBox3.Text = ans;
-                    }
-
+                    else label1.Text = "Вектор должен быть 16 ASCII символов!";
                 }
                 else label1.Text = "Необходимо ввести пароль!";
             }
@@ -55,6 +69,21 @@ namespace AES_CRYPT
                 label1.Text = "Введите текст и пароль для шифрования";
                 button1.Text = "Encrypt";
             }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            pinter = trackBar1.Value;
+        }
+
+        private void cb1hash_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            hs = Convert.ToString(cb1hash.Items[cb1hash.SelectedIndex]);
+        }
+
+        private void cb2len_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            siz = Convert.ToInt16(cb2len.Items[cb2len.SelectedIndex]);
         }
     }
     public class aes
