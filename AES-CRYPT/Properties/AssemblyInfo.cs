@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("AES-CRYPT")]
-[assembly: AssemblyDescription("Алгоритм шифрования AES-256")]
+[assembly: AssemblyDescription("Алгоритм шифрования AES")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Home Ltd")]
 [assembly: AssemblyProduct("AES-CRYPT")]
 [assembly: AssemblyCopyright("Copyright © Home 2015")]
-[assembly: AssemblyTrademark("Govnocode")]
+[assembly: AssemblyTrademark("Bug")]
 [assembly: AssemblyCulture("")]
 
 // Параметр ComVisible со значением FALSE делает типы в сборке невидимыми 
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]
 [assembly: NeutralResourcesLanguage("ru-RU")]
 
